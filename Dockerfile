@@ -8,13 +8,10 @@ RUN apt-get install -y openjdk-18-jdk maven
 
 # ijava kernel
 WORKDIR /app
-RUN git clone --branch try-upgrade-gradle --depth 1 https://github.com/hanslovsky/Jupyter-kernel-installer-gradle.git
-RUN git clone --depth 1 https://github.com/hanslovsky/IJava.git
-
-WORKDIR /app/Jupyter-kernel-installer-gradle
-RUN ./gradlew publishToMavenLocal
+RUN git clone --depth 1 https://github.com/frankfliu/IJava.git
 
 WORKDIR /app/IJava
+RUN ./gradlew publishToMavenLocal
 RUN ./gradlew installKernel
 
 
