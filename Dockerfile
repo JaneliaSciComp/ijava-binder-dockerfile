@@ -11,7 +11,6 @@ WORKDIR /app
 RUN git clone --depth 1 https://github.com/frankfliu/IJava.git
 
 WORKDIR /app/IJava
-RUN ./gradlew publishToMavenLocal
 RUN ./gradlew installKernel
 
 
